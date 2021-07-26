@@ -1,0 +1,60 @@
+{%extends 'base.html' %}
+{% load static%}
+
+{% block content%}
+
+
+<div class="container">
+    <!--{{ stock.Symbol }}-->
+    <h1 class="headd">Nepal Telecom (NTC):</h1>
+    <section class="right-main container grid">
+        <div class="card">
+            <header>
+                <h1>dashboard</h1>
+            </header>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae amet quisquam debitis maiores
+                illo
+                quasi consequatur hic voluptate aliquam temporibus quidem quas tempora maxime pariatur officia
+                suscipit,
+                dicta obcaecati sit aut error consequuntur eius numquam officiis. Totam tenetur architecto quasi,
+                quam
+                cupiditate excepturi qui, eius fugiat ab alias dolore eveniet!
+            </p>
+
+        </div>
+        <p class="card">
+            As on: {{stock.Date}} 1,281.00 13.00 1.03 % <br>
+            Open: {{stock.Open}} High: {{stock.High}} Low: {{stock.Low}} Volume: {{stock.Vol}}<br>
+            52 Week High-Low :1,500.00 - 576.00 180 Days Average : 1,150.59<br>
+            120 Days Average : 1,295.89<br>
+        </p>
+    </section>
+    <section class="left-main container grid">
+        <p class="card">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores harum numquam exercitationem qui
+            sapiente error, magni aut minima delectus iure culpa voluptate veniam earum impedit quasi nisi animi
+            repellat blanditiis.
+        </p>
+        <p class="card">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores fugit explicabo ullam repellat iste
+            soluta deserunt aut veniam sed consequatur, officia, cumque atque possimus odio aperiam quasi quod amet
+            porro. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit quae nesciunt qui fugit? Provident
+            assumenda ducimus officia inventore voluptatibus molestiae atque accusantium doloribus! Minima,
+            doloremque placeat. Tenetur rerum ea ipsum.
+        </p>
+    </section>
+    <section class="container grid">
+        <p class="card">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores harum numquam exercitationem qui
+            sapiente error, magni aut minima delectus iure culpa voluptate veniam earum impedit quasi nisi animi
+            repellat blanditiis.
+        </p>
+        <p class="card">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores fugit explicabo ullam repellat iste
+            soluta deserunt aut veniam sed consequatur, officia, cumque atque possimus odio aperiam quasi quod amet
+            porro.
+        </p>
+    </section>
+</div>
+
+{% endblock %}

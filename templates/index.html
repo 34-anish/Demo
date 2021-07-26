@@ -1,0 +1,251 @@
+{%extends 'base.html' %}
+{% load static%}
+
+{% block content%}
+<!-- showcase -->
+
+<section class="showcase" id="showcase">
+    <div class="container">
+        <marquee class="marquee" scrollamount="5" scrolldelay="10" onmouseover="this.stop();" onmouseout="this.start()">
+            hello,this is showcase Lorem ipsum dolor sit amet consectetur adipisicing
+            elit.
+            Placeat, officia? Nam, alias quas. Sunt assumenda et voluptatum architecto dolorem consequatur ex
+            facilis! Ut corrupti possimus cum ullam deleniti, itaque dolores repellendus, amet veniam, tempora
+            cupiditate iste odit doloremque delectus accusantium? Corrupti modi, excepturi mollitia soluta animi
+            commodi ex aperiam incidunt?
+        </marquee>
+    </div>
+</section>
+
+<!-- main  -->
+<section class="container">
+    <div class="panel">
+        <h1 class="panel-head">dashboard</h1>
+        <canvas>
+
+        </canvas>
+    </div>
+</section>
+<section class="right-main container grid">
+    <div class="panel" id="about">
+        <div class="panel-head">
+            <h3>Nepse Market:</h3>
+            <select id="nepse-market" class="btn btn-outline">
+                <option value="top-gainers" selected="">Top Gainers</option>
+                <option value="top-losers">Top Losers</option>
+            </select>
+        </div>
+
+        <table class="tablestyle" id="top-gainers">
+            <tr>
+                <th>Symbol</th>
+                <th>LTP</th>
+                <th>PointChange</th>
+                <th>PercentageChange</th>
+
+            </tr>
+            {% for TopGainers in f_TopGainers %}
+            <tr>
+                <td>{{ TopGainers.Symbol }}</td>
+                <td>{{ TopGainers.LTP }}</td>
+                <td>{{ TopGainers.PointChange }}</td>
+                <td>{{ TopGainers.PercentageChange }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+        <table class="tablestyle" id="top-losers" style="display: none;">
+            <tr>
+                <th>Symbol</th>
+                <th>TurnOvers</th>
+                <th>LTP</th>
+                <th>PercentageChange</th>
+            </tr>
+            {% for TopLoosers in f_TopLoosers %}
+            <tr>
+                <td>{{ TopLoosers.Symbol }}</td>
+                <td>{{ TopLoosers.LTP }}</td>
+                <td>{{ TopLoosers.PointChange }}</td>
+                <td>{{ TopLoosers.PercentageChange }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+
+    </div>
+    <div class="panel">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit neque modi perspiciatis qui sunt corrupti
+        placeat dolorum, dolor exercitationem. Ad, natus eaque ducimus aliquam magnam, sint quisquam quidem incidunt
+        quam numquam id adipisci ullam laudantium necessitatibus quibusdam, officiis beatae iure? Id minima aperiam
+        non culpa exercitationem veniam mollitia quas beatae!
+    </div>
+</section>
+<section class="left-main container grid">
+    <div class="panel">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit neque modi perspiciatis qui sunt corrupti
+        placeat dolorum, dolor exercitationem. Ad, natus eaque ducimus aliquam magnam, sint quisquam quidem incidunt
+        quam numquam id adipisci ullam laudantium necessitatibus quibusdam, officiis beatae iure? Id minima aperiam
+        non culpa exercitationem veniam mollitia quas beatae!
+    </div>
+    <div class="panel">
+        <h3 class="panel-head">Top TurnOvers</h3>
+        <table class="tablestyle">
+            <tr>
+                <th>Symbol</th>
+                <th>TurnOvers</th>
+                <th>LTP</th>
+            </tr>
+            {% for TopTurnOvers in f_TopTurnOvers %}
+            <tr>
+                <td>{{ TopTurnOvers.Symbol }}</td>
+                <td>{{ TopTurnOvers.TurnOvers }}</td>
+                <td>{{ TopTurnOvers.LTP }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+
+<section class="container grid">
+    <div class="panel ">
+        <h3 class="panel-head">Index</h3>
+        <table class="tablestyle">
+            <tr>
+                <th>Index</th>
+                <th>Close</th>
+                <th>PointChange</th>
+                <th>PercentageChange</th>
+            </tr>
+            {% for index in f_index %}
+            <tr>
+                <td>{{ index.Index }}</td>
+                <td>{{ index.Close }}</td>
+                <td>{{ index.PointChange }}</td>
+                <td>{{ index.PercentageChange }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+    <div class="panel ">
+        <h3 class="panel-head">Top traded shares</h3>
+        <table class="tablestyle">
+            <tr>
+                <th>Symbol</th>
+                <th>Volumn</th>
+                <th>LTP</th>
+            </tr>
+            {% for TopTradedShares in f_TopTradedShares %}
+            <tr>
+                <td>{{ TopTradedShares.Symbol }}</td>
+                <td>{{ TopTradedShares.Volumn }}</td>
+                <td>{{ TopTradedShares.LTP }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+<section class="container">
+    <div class="panel">
+        <h3 class="panel-head">sub-index</h3>
+        <table class="tablestyle">
+            <tr>
+                <th>SubIndex</th>
+                <th>Turnover</th>
+                <th>Close</th>
+                <th>PointChange</th>
+                <th>PercentageChange</th>
+            </tr>
+            {% for temp in f_subindex %}
+            <tr>
+                <td>{{ temp.SubIndex }}</td>
+                <td>{{ temp.Turnover }}</td>
+                <td>{{ temp.Close }}</td>
+                <td>{{ temp.PointChange }}</td>
+                <td>{{ temp.PercentageChange }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, officiis sint! Fugit impedit sint nulla
+        quis blanditiis reiciendis, facilis, cumque dolorum laborum veritatis rerum unde nemo modi, nostrum
+        voluptate delectus id voluptatum a illum architecto facere autem temporibus? Eveniet distinctio ea, sequi
+        corporis laboriosam quia a repudiandae. Reprehenderit ipsam officia, delectus nisi est commodi perspiciatis
+        soluta laborum corrupti recusandae nam? Blanditiis, optio ut! Voluptate facilis sunt alias in magnam, nam
+        aspernatur at provident eius totam ipsam fugit, tempora placeat reprehenderit cupiditate? Quasi minus illo
+        odio ab quo, corporis repudiandae aut officiis nisi, voluptate numquam excepturi facilis omnis soluta
+        possimus, quas incidunt magnam facere? Expedita optio perspiciatis aliquid sequi commodi praesentium soluta,
+        eos odit eveniet. Cupiditate laborum adipisci harum, ea maiores aliquam nulla reprehenderit quo possimus non
+        molestias, vitae a libero tempora corrupti nemo optio fugiat, odit quaerat similique iusto. Ipsa,
+        consectetur! Obcaecati dignissimos quibusdam tempore deleniti temporibus repudiandae dicta maxime aliquid
+        quaerat sint provident, iure consequatur molestiae eius adipisci quo, quidem officia ea earum reprehenderit
+        nam. Perspiciatis perferendis sunt aut aperiam commodi, adipisci mollitia doloremque numquam maxime nisi
+        illum iure. Deserunt blanditiis esse mollitia ut eos! Dolores quasi, natus explicabo odit aliquam iusto id
+        exercitationem quae, accusantium qui velit consectetur.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, officiis sint! Fugit impedit sint nulla
+        quis blanditiis reiciendis, facilis, cumque dolorum laborum veritatis rerum unde nemo modi, nostrum
+        voluptate delectus id voluptatum a illum architecto facere autem temporibus? Eveniet distinctio ea, sequi
+        corporis laboriosam quia a repudiandae. Reprehenderit ipsam officia, delectus nisi est commodi perspiciatis
+        soluta laborum corrupti recusandae nam? Blanditiis, optio ut! Voluptate facilis sunt alias in magnam, nam
+        aspernatur at provident eius totam ipsam fugit, tempora placeat reprehenderit cupiditate? Quasi minus illo
+        odio ab quo, corporis repudiandae aut officiis nisi, voluptate numquam excepturi facilis omnis soluta
+        possimus, quas incidunt magnam facere? Expedita optio perspiciatis aliquid sequi commodi praesentium soluta,
+        eos odit eveniet. Cupiditate laborum adipisci harum, ea maiores aliquam nulla reprehenderit quo possimus non
+        molestias, vitae a libero tempora corrupti nemo optio fugiat, odit quaerat similique iusto. Ipsa,
+        consectetur! Obcaecati dignissimos quibusdam tempore deleniti temporibus repudiandae dicta maxime aliquid
+        quaerat sint provident, iure consequatur molestiae eius adipisci quo, quidem officia ea earum reprehenderit
+        nam. Perspiciatis perferendis sunt aut aperiam commodi, adipisci mollitia doloremque numquam maxime nisi
+        illum iure. Deserunt blanditiis esse mollitia ut eos! Dolores quasi, natus explicabo odit aliquam iusto id
+        exercitationem quae, accusantium qui velit consectetur.
+    </p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolorem ratione vel praesentium saepe fuga
+        delectus illo esse facilis, ea quo exercitationem asperiores alias reprehenderit quis est ipsa corrupti.
+        Dolore debitis dolorem ea? Fuga debitis odio, vero repellendus reprehenderit perferendis repellat corporis
+        ea quo sint vitae dolores ex voluptatem, eveniet culpa ratione voluptatum natus eum pariatur iusto
+        doloremque facilis non molestiae at. Odio doloribus voluptas cumque quam harum voluptatem incidunt, optio,
+        architecto similique nam voluptates cum. Ipsa voluptatibus ut perferendis maiores rem vel tenetur
+        dignissimos totam autem fuga est quaerat sunt atque iste veritatis facere laudantium eos temporibus, facilis
+        in. Voluptatem nam veritatis omnis aliquid ex fugit corrupti neque quae eligendi. Repudiandae maiores illo
+        architecto. Qui laborum veniam cum nisi ratione iure vero expedita labore. Ducimus tempore eveniet
+        distinctio animi doloribus, sed consequatur quo amet reprehenderit? Molestiae id aliquid excepturi vero,
+        eius accusamus fugiat ratione itaque fugit quas veritatis laborum cumque ipsa corrupti? Quos alias,
+        doloremque dolorum dolorem cupiditate consequatur expedita, quis ipsum vel blanditiis rerum. Ab
+        necessitatibus velit voluptate repudiandae aut. Omnis deserunt laboriosam beatae voluptates adipisci
+        debitis, fuga delectus. Repellat cumque officiis vero voluptate id ratione ab praesentium, minima incidunt
+        quis labore nesciunt repellendus suscipit odio quasi quia consequuntur corporis quos rem officia quo
+        possimus distinctio. Dicta porro qui eos! Voluptates, vel excepturi. Quis enim vel ipsum! Sint, labore harum
+        iusto minima tempore facilis cupiditate omnis facere illum, dolorum veniam laborum. At ullam distinctio
+        ipsum corrupti suscipit modi, architecto explicabo libero dolorem perferendis hic ducimus. Totam, facere.
+        Numquam vel delectus inventore quibusdam quisquam. Sapiente consectetur quibusdam consequuntur aperiam culpa
+        in nulla aspernatur officiis ex inventore exercitationem, quod suscipit assumenda enim dicta nesciunt
+        molestiae officia numquam fugiat. Tempore omnis illo voluptates consequatur quo! Sed, rem perferendis.
+        Distinctio cumque unde fugiat velit. Veniam adipisci aperiam impedit sunt, ut quos, laudantium minima quam
+        temporibus provident veritatis esse totam nihil ipsa? Vitae ea ut delectus illum eum nemo rerum, aspernatur
+        beatae nesciunt in, laboriosam ullam. Possimus in natus animi aliquam eum repellendus quod adipisci. Natus
+        qui modi minima, vitae sunt adipisci commodi blanditiis alias cumque nam magni nisi, expedita rem deleniti?
+        Eum velit possimus nam totam, praesentium quae nobis itaque illum placeat labore quos temporibus repellat
+        omnis dolorem culpa impedit, non doloribus quo rem debitis fugiat minima doloremque amet asperiores.
+        Perspiciatis veniam aperiam ratione culpa sed exercitationem nihil doloribus quia, laborum impedit qui
+        tempore! Maxime quia libero commodi aliquam hic. Saepe repellat excepturi id ipsam repellendus? Voluptatibus
+        sed magni quam nemo? Fugiat esse provident est unde. Velit hic quo, placeat eius minima amet, quam non
+        molestiae reiciendis blanditiis fugit nemo suscipit odio ullam illum veniam. Architecto deserunt unde ullam
+        odio iusto! Optio fugiat cumque illum minima laudantium ea quasi atque suscipit perspiciatis. Debitis
+        maiores necessitatibus dolore tempore aspernatur qui doloribus asperiores architecto sequi. Et, obcaecati!
+        Officiis aspernatur voluptates voluptatem. Repellat magnam dolorum tenetur facere ducimus placeat quasi modi
+        possimus delectus sint iure, pariatur ea eius ex. Doloribus eius dolores, sit recusandae excepturi natus
+        commodi nam vel nobis numquam deserunt minus iusto rerum?</p>
+
+
+
+
+
+    {% endblock content %}
+
+    {%block script%}
+    <script src="{% static 'script.js'%}"></script>
+    {% endblock %}
